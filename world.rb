@@ -79,11 +79,10 @@ end
  end
 
 # update
-  if crud == "u"
-    Menu.list_all(everybody_array)
-    puts "What name do you want to update"
-    name_to_update = gets.chomp
-  end
+if crud == "u"
+  Menu.list_all(everybody_array)
+  puts "What name do you want to update"
+  name_to_update = gets.chomp
   if name_to_update != nil
     puts "What is the new name?"
     new_name = gets.chomp
@@ -93,13 +92,14 @@ end
     confirm = gets.chomp
   end
   if confirm == "y"
-      Menu.update_name(everybody_array, name_to_update, new_name)
-     puts "Do you want to change your affiliation? y or n"
-     confirm = gets.chomp 
-     if confirm == "y"
+    Menu.update_name(everybody_array, name_to_update, new_name)
+    puts "Do you want to change your affiliation? y or n"
+    confirm = gets.chomp
+    if confirm == "y"
       Menu.update_affiliation(everybody_array, new_name)
-     end
+    end
   end
+end
   
  
 
